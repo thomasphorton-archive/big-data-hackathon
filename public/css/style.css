@@ -1,0 +1,37 @@
+body {
+  padding: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  margin: 5px 0;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#map-canvas {
+  height: 600px;
+}
+
+.controls-wrap {
+  height: 150px;
+  display: block;
+}
+
+.slider-wrap {
+  float: left;
+  width: 120px;
+  text-align: center;
+}
+
+.slider {
+  margin: 0 auto;
+  height: 100px;
+}
+
+.slider-display {
+  margin-top : 10px;
+  display: block;
+}

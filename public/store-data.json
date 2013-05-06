@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "51848a498a82dbedac32c9a0"
+  },
+  "STORE": 1,
+  "LONGITUDE": -80.7806678,
+  "LATITUDE": 35.3710995
+},{
+    "_id": {
+        "$oid": "51848a498a82dbedac32c9a1"
+    },
+    "STORE": 2,
+    "LONGITUDE": -80.77777656000001,
+    "LATITUDE": 35.32015444
+},{
+    "_id": {
+        "$oid": "51848a498a82dbedac32c9a2"
+    },
+    "STORE": 3,
+    "LONGITUDE": -80.76300224000001,
+    "LATITUDE": 35.3389554
+},{
+    "_id": {
+        "$oid": "51848a498a82dbedac32c9a3"
+    },
+    "STORE": 4,
+    "LONGITUDE": -80.73599692000001,
+    "LATITUDE": 35.29502129
+},{
+    "_id": {
+        "$oid": "51848a498a82dbedac32c9a4"
+    },
+    "STORE": 5,
+    "LONGITUDE": -80.78213442000001,
+    "LATITUDE": 35.380121
+}]
