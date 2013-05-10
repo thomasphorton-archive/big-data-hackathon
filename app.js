@@ -7,7 +7,8 @@ var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
   , stores = require('./routes/stores')
-  , customers = require('./routes/customers')
+  , segments = require('./routes/segments')
+  , heatmap = require('./routes/heatmap')
   , fs = require('fs')
   , http = require('http')
   , path = require('path');
@@ -31,9 +32,13 @@ if ('development' == app.get('env')) {
 }
 app.get('/', routes.index);
 app.get('/stores', stores.list);
-app.get('/customers', customers.list);
+app.get('/segments', segments.list);
+app.get('/heatmap', heatmap.all);
+app.get('/heatmap/segment/:segment', heatmap.segment);
+app.get('/heatmap/store/:store', heatmap.store);
 app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
+

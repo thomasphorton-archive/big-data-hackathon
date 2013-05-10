@@ -1,0 +1,25 @@
+extends heatmap
+
+block subnav
+  div.subnav.subnav-fixed
+      ul.nav.nav-pills
+        li
+          a(href='/heatmap/store/1') Store 1
+        li
+          a(href='/heatmap/store/2') Store 2
+        li
+          a(href='/heatmap/store/3') Store 3
+        li
+          a(href='/heatmap/store/4') Store 4
+        li
+          a(href='/heatmap/store/5') Store 5
+          
+block breadcrumb
+  ul.breadcrumb
+      li 
+        a(href="/") Home
+        span.divider /
+      li
+        a(href="/store/") Stores
+        span.divider /
+      li.active 1

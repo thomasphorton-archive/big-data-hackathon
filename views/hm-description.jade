@@ -1,0 +1,24 @@
+extends heatmap
+
+block subnav
+  div.subnav.subnav-fixed
+    ul.nav.nav-pills
+      li
+        a(href='/heatmap/segment/beer') Beer
+      li
+        a(href='/heatmap/segment/wine') Wine
+      li
+        a(href='/heatmap/segment/deli') Deli
+      li
+        a(href='/heatmap/segment/bakery') Bakery
+          
+block breadcrumb
+  ul.breadcrumb
+      li 
+        a(href="/") Home
+        span.divider /
+      li
+        a(href="/segments/") Segments
+        span.divider /
+      li.active Beer
+          

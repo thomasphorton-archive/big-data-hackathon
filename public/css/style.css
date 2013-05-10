@@ -1,14 +1,6 @@
 body {
-  padding: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-h1 {
-  margin: 5px 0;
-}
-
-a {
-  color: #00B7FF;
+  padding-top: 90px;
 }
 
 #map-canvas {
@@ -16,8 +8,8 @@ a {
 }
 
 .controls-wrap {
-  height: 150px;
-  display: block;
+  height: 155px;
+  display: none;
 }
 
 .slider-wrap {
@@ -34,4 +26,33 @@ a {
 .slider-display {
   margin-top : 10px;
   display: block;
+}
+
+.ui-widget-header {
+  border: none !important;
+  background: #d44413 !important;
+}
+
+.gmnoprint {
+  display: none;
+}
+
+.navbar .brand {
+  padding: 9px 20px 8px;
+}
+
+.img-loading {
+  position: absolute;
+  left: 50%;
+  margin-left: -64px;
+  top: 50%;
+  margin-top: -8px;
+}
+
+.controls-toggle {
+  margin: 4px 0;
+}
+
+.icon-cog {
+  margin-left: 10px;
 }

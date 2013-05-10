@@ -1,0 +1,36 @@
+extends layout
+
+block subnav
+  div.subnav.subnav-fixed
+    ul.nav.nav-pills
+      li
+        a(href='/heatmap/segment/beer') Beer
+      li
+        a(href='/heatmap/segment/wine') Wine
+      li
+        a(href='/heatmap/segment/deli') Deli
+      li
+        a(href='/heatmap/segment/bakery') Bakery
+
+block content
+  div.container
+  
+    ul.breadcrumb
+      li 
+        a(href="/") Home
+        span.divider /
+      li.active Stores
+  
+    h2 Information By Segment
+  
+    table.table.table-bordered.table-striped.table-hover
+      thead
+        tr
+          th Segment
+          th 
+          
+      for segment in locals.segments
+        tr  
+          td #{segment.title} 
+          td
+            a(href='/heatmap/segment/' + segment.title) Heatmap

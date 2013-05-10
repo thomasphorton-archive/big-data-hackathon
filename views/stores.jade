@@ -1,17 +1,42 @@
 extends layout
 
+block subnav
+  div.subnav.subnav-fixed
+      ul.nav.nav-pills
+        li
+          a(href='/heatmap/store/1') Store 1
+        li
+          a(href='/heatmap/store/2') Store 2
+        li
+          a(href='/heatmap/store/3') Store 3
+        li
+          a(href='/heatmap/store/4') Store 4
+        li
+          a(href='/heatmap/store/5') Store 5
+
 block content
-  h1= title
-  p Welcome to #{title}
+  div.container
   
-  for store in locals.data
-    section.storeListing
-      h1 Store ##{store.STORE}
-      p Lat: ##{store.LATITUDE}
-      p Long: ##{store.LONGITUDE}
-      
-  div#map-canvas
+    ul.breadcrumb
+      li 
+        a(href="/") Home
+        span.divider /
+      li.active Stores
   
-  script(type='text/javascript', src= "https://maps.googleapis.com/maps/api/js?key=AIzaSyCbWztMBb0WGNLn_mHvZNA5Jf8-c_KkrUk&sensor=true")
-  script(type='text/javascript', src= "/js/map.js")
- 
+    h2 Information By Store
+  
+    table.table.table-bordered.table-striped.table-hover
+      thead
+        tr
+          th Store #
+          th Lat
+          th Long
+          th 
+          
+      for store in locals.stores
+        tr  
+          td ##{store.STORE}
+          td #{store.LATITUDE}
+          td #{store.LONGITUDE} 
+          td
+            a(href='/heatmap/store/' + store.STORE) Heatmap
