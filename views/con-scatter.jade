@@ -1,0 +1,15 @@
+extends content
+    
+block javascript
+  script(type='text/javascript')
+    var customers =!{JSON.stringify(locals.customers)}
+    var comparison =!{JSON.stringify(locals.comparison)}
+  script(type='text/javascript', src="https://www.google.com/jsapi")
+  script(type='text/javascript', src= "/js/scatter.js")
+    
+block breadcrumb
+    
+block content
+  div.row
+    div#chart_div.span12.column
+  

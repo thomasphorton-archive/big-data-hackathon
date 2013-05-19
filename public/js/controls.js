@@ -18,7 +18,7 @@ $(function() {
     orientation: "vertical",
     range: "min",
     min: 1,
-    max: 500,
+    max: 1000000,
     value: 100,
     slide: function (event, ui) {
       $("#display-maxIntensity").text(ui.value);

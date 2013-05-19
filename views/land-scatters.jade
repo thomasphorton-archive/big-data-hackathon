@@ -1,0 +1,40 @@
+extends landing
+
+block javascript
+  script(type='text/javascript', src= "/js/land-scatters.js")
+
+block content
+  div.container
+    div.row
+      div.span3.column
+      div.span6.column
+        h1=title
+        
+    div.row
+      div.span3.column
+        label X Axis:
+        select.span3#x
+      div.span3.column
+        label Y Axis:
+        select.span3#y
+      div.span3.column
+        label Store Number:
+        select.span3#store
+          option(value="all") All Stores
+          option(value="1") 1
+          option(value="2") 2
+          option(value="3") 3
+          option(value="4") 4
+          option(value="5") 5
+      div.span3.column
+        label Segment:
+        select.span3#segment
+          option(value="all") All Segments
+          option(value="beer") Beer
+          option(value="wine") Wine
+          option(value="deli") Deli
+          option(value="bakery") Bakery
+    div.row
+      div.span4.column
+      div.span4.column
+        a.btn.btn-primary.btn-large.generate-scatter(href="#") Plot it!

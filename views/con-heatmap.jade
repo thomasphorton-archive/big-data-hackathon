@@ -1,0 +1,37 @@
+extends content
+    
+block javascript
+  script(type="text/javascript", src= "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=visualization")
+  script(type='text/javascript', src= "/js/heatmap.js")
+  script(type='text/javascript', src= "/js/controls.js")
+  script(type='text/javascript')
+    var customers =!{JSON.stringify(locals.customers)}
+    var stores =!{JSON.stringify(locals.stores)}
+    var weighted = !{JSON.stringify(locals.weighted)}
+    
+block breadcrumb
+
+block content
+  div.row
+    div#map-canvas.column.span12
+      img.img-loading(src='/css/images/ajax-loader.gif')  
+
+  div.row
+    span.btn.controls-toggle Visualizer Controls
+      i.icon-cog
+    
+    div.controls-wrap.well
+      div.slider-wrap
+        span.slider-title opacity
+        div#slider-opacity.slider
+        span#display-opacity.slider-display 0.9
+      
+      div.slider-wrap
+        span.slider-title maxIntensity
+        div#slider-maxIntensity.slider 
+        span#display-maxIntensity.slider-display 100
+      
+      div.slider-wrap
+        span.slider-title radius
+        div#slider-radius.slider 
+        span#display-radius.slider-display 10

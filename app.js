@@ -6,9 +6,8 @@
 var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
-  , stores = require('./routes/stores')
-  , segments = require('./routes/segments')
-  , heatmap = require('./routes/heatmap')
+  , landing = require('./routes/landing')
+  , visualization = require('./routes/visualization')
   , fs = require('fs')
   , http = require('http')
   , path = require('path');
@@ -31,12 +30,13 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 app.get('/', routes.index);
-app.get('/stores', stores.list);
-app.get('/segments', segments.list);
-app.get('/heatmap', heatmap.all);
-app.get('/heatmap/segment/:segment', heatmap.segment);
-app.get('/heatmap/store/:store', heatmap.store);
-app.get('/users', user.list);
+app.get('/heatmaps', landing.heatmaps);
+app.get('/heatmap/store/:store/segment/:segment/:weighted?*', visualization.heatmap);
+app.get('/graphs', landing.graphs);
+app.get('/graph/store/:store/segment/:segment', visualization.graph);
+app.get('/scatters', landing.scatters);
+app.get('/scatter/:x/:y/store/:store/segment/:segment/:distance?*', visualization.scatter);
+//app.get('/pie/by/:method/select/:select/', visualization.pie);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

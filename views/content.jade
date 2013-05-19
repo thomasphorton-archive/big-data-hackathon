@@ -9,12 +9,11 @@ html
     link(rel='stylesheet', href='//bootswatch.com/css/bootswatch.css')
     link(rel='stylesheet', href='/css/jquery-ui.css')
     link(rel='stylesheet', href='/css/style.css')
-    
     script(type='text/javascript', src= "//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js")
-
     script(type='text/javascript', src= "/js/jquery-ui.js")
     script(type='text/javascript', src= "/js/tabs.js")
-   
+    
+    block javascript
     
   body
   
@@ -22,18 +21,22 @@ html
       div.navbar-inner
         div.container
           a.btn.btn-navbar.collapsed 
-          a.brand(href="/") Hackathon CLT
+          a.brand(href="/") HackathonCLT
           ul.nav
             li
-              a(href="/heatmaps") Heatmaps
+              a(href='/heatmaps') Heatmaps
             li
               a(href="/graphs") Graphs
             li
               a(href="/scatters") Scatter Plots
-        
-    block subnav
-        
-    block content
+                  
+    div.container
+      
+      block breadcrumb
+      
+      h1= title
+      
+      block content
     
     hr
     
@@ -44,5 +47,3 @@ html
         div.span4
         
         div.span4
-          
-          

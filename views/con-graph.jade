@@ -1,0 +1,85 @@
+extends content
+
+block javascript
+    script(type='text/javascript')
+      var points =!{JSON.stringify(points)}
+      
+    script(src="/js/graphs.js")
+    script(src="/js/raphael-min.js")
+    script(src="/js/popup.js")
+    script(src="/js/analytics.js")
+    
+block breadcrumb
+        
+block content
+  table#data.column.span7
+    tfoot
+      tr
+        - var i = 2
+        - each point in points
+          th= i
+          - i++
+    tbody
+      tr
+        - each point in points
+          td= point  
+
+  div.row
+    div#holder.column.span7 
+    
+    div.column.span5
+      h3 Other Store##{locals.store} Graphs
+      table.table.table-striped.table-bordered
+        tr
+          td
+          td Transactions
+        tr
+          td Beer
+          td 
+            a(href="/graph/store/#{locals.store}/segment/beer") Unweighted
+        tr
+          td Wine
+          td 
+            a(href="/graph/store/#{locals.store}/segment/wine") Unweighted
+        tr
+          td Deli
+          td 
+            a(href="/graph/store/#{locals.store}/segment/deli") Unweighted
+        tr
+          td Bakery
+          td 
+            a(href="/graph/store/#{locals.store}/segment/bakery") Unweighted
+        tr
+          td All Segments
+          td 
+            a(href="/graph/store/#{locals.store}/segment/all") Unweighted
+
+      h3 Other #{locals.segment} Graphs
+      table.table.table-striped.table-bordered
+        tr
+          td
+          td Transactions
+        tr
+          td Store #1
+          td
+            a(href="/graph/store/1/segment/#{locals.segment}") Unweighted
+        tr
+          td Store #2
+          td
+            a(href="/graph/store/2/segment/#{locals.segment}") Unweighted
+        tr
+          td Store #3
+          td
+            a(href="/graph/store/3/segment/#{locals.segment}") Unweighted
+        tr
+          td Store #4
+          td
+            a(href="/graph/store/4/segment/#{locals.segment}") Unweighted
+        tr
+          td Store #5
+          td
+            a(href="/graph/store/5/segment/#{locals.segment}") Unweighted
+        tr
+          td All Stores
+          td
+            a(href="/graph/store/all/segment/#{locals.segment}") Unweighted

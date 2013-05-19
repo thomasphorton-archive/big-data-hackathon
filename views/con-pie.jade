@@ -1,0 +1,70 @@
+extends content
+    
+block javascript
+  script(type='text/javascript')
+    var customers =!{JSON.stringify(locals.customers)}
+  script(type='text/javascript', src="https://www.google.com/jsapi")
+  script(type='text/javascript', src= "/js/pie.js")
+    
+block breadcrumb
+    
+block content
+  div.row
+    div#holder.span7.column
+    
+    div.column.span5
+      h3 Other Store##{locals.store} Scatter Plots
+      table.table.table-striped.table-bordered
+        tr
+          td
+          td Transactions
+        tr
+          td Beer
+          td 
+            a(href="/scatter/store/#{locals.store}/segment/beer") Unweighted
+        tr
+          td Wine
+          td 
+            a(href="/scatter/store/#{locals.store}/segment/wine") Unweighted
+        tr
+          td Deli
+          td 
+            a(href="/scatter/store/#{locals.store}/segment/deli") Unweighted
+        tr
+          td Bakery
+          td 
+            a(href="/scatter/store/#{locals.store}/segment/bakery") Unweighted
+        tr
+          td All Segments
+          td 
+            a(href="/scatter/store/#{locals.store}/segment/all") Unweighted
+
+      h3 Other #{locals.segment} Scatter Plots
+      table.table.table-striped.table-bordered
+        tr
+          td
+          td Transactions
+        tr
+          td Store #1
+          td
+            a(href="/scatter/store/1/segment/#{locals.segment}") Unweighted
+        tr
+          td Store #2
+          td
+            a(href="/scatter/store/2/segment/#{locals.segment}") Unweighted
+        tr
+          td Store #3
+          td
+            a(href="/scatter/store/3/segment/#{locals.segment}") Unweighted
+        tr
+          td Store #4
+          td
+            a(href="/scatter/store/4/segment/#{locals.segment}") Unweighted
+        tr
+          td Store #5
+          td
+            a(href="/scatter/store/5/segment/#{locals.segment}") Unweighted
+        tr
+          td All Stores
+          td
+            a(href="/scatter/store/all/segment/#{locals.segment}") Unweighted
